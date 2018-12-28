@@ -1,0 +1,35 @@
+{
+    "AWSEBDockerrunversion":2,
+    "containerDefinitions": [
+     {
+         "name":"client",
+         "iamge":"henok2346/multi-client",
+         "hostname":"client",
+         "essential":false
+     },
+     {
+         "name":"server",
+         "image":"henokyen/multi-server",
+         "hostname":"api",
+         "essential":false
+     },
+     {
+        "name":"worker",
+        "image":"henokyen/multi-worker",
+        "hostname":"worker",
+        "essential":false
+     },
+     {
+        "name":"nginx",
+        "image":"henokyen/multi-nginx",
+        "essential":true,
+        "postMappings":[
+            {
+                "hostPort":80,
+                "containerPort":80
+            }
+        ],
+        "links":["client","server"]
+     }
+    ]
+}
