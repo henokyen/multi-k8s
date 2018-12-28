@@ -16,7 +16,7 @@ from nginx
 expose 3000
 
 #replace the default.conf file which exists in the nginx image by the one defined in the ./nginx directory inside the client directory
-copy ./nginx.default.conf /etc/nginx/conf.d/default.conf 
+copy ./nginx/default.conf /etc/nginx/conf.d/default.conf 
 
 #now copy over the production version of all of our assets 
 #that reside inside the '/app/build into a place where nginx serves front-end pages
