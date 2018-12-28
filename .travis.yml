@@ -18,7 +18,7 @@ after_success: # build prodocution version for each of the project parts
   - docker build -t henok2346/multi-nginx  ./nginx
   - docker build -t henok2346/multi-server ./server
   - docker build -t henok2346/multi-worker ./worker 
-  if [ "$TRAVIS_BRANCH" == "master" ]; then
+  
   #first login to the docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take those images and push them to docker hub
@@ -26,4 +26,4 @@ after_success: # build prodocution version for each of the project parts
   - docker push henok2346/multi-nginx
   - docker push henok2346/multi-server
   - docker push henok2346/multi-worker
-  fi
+  
