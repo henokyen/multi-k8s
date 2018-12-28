@@ -13,15 +13,15 @@ script:
   - docker run henokyen/react-test npm run test -- --coverage
 
 after_success: # build prodocution version for each of the project parts
-  - docker build -t henokyen/multi-clinet ./client # it will use the default deockerfile which is Dockerfile
-  - docker build -t henokyen/multi-nginx ./nginx
-  - docker build -t henokyen/multi-server ./server
-  - docker build -t henokyen/multi-worker ./worker 
+  - docker build -t henok2346/multi-clinet ./client # it will use the default deockerfile which is Dockerfile
+  - docker build -t henok2346/multi-nginx ./nginx
+  - docker build -t henok2346/multi-server ./server
+  - docker build -t henok2346/multi-worker ./worker 
 
   #first login to the docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take those images and push them to docker hub
-  - docker push henokyen/multi-client
-  - docker push henokyen/multi-nginx
-  - docker push henokyen/multi-server
-  - docker push henokyen/multi-worker
+  - docker push henok2346/multi-client
+  - docker push henok2346/multi-nginx
+  - docker push henok2346/multi-server
+  - docker push henok2346/multi-worker
