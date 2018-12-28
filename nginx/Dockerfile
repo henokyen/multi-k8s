@@ -1,5 +1,7 @@
 From nginx:latest
-copy ./default.conf /etc/nginx/conf.d/default.conf #we are replacing the default.conf file which exists in the nginx image
+
+#we are replacing the default.conf file which exists in the nginx image
+copy ./default.conf /etc/nginx/conf.d/default.conf 
 
 #note:
  #there is no command to run because
