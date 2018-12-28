@@ -1,7 +1,7 @@
 from node:alpine as builder 
 workdir '/app'
 copy ./package.json ./
-run nom install 
+run npm install 
 copy . .
 
 
