@@ -10,21 +10,21 @@
      },
      {
          "name":"server",
-         "image":"henokyen/multi-server",
+         "image":"henok2346/multi-server",
          "hostname":"api",
          "essential":false,
          "memory":128
      },
      {
         "name":"worker",
-        "image":"henokyen/multi-worker",
+        "image":"henok2346/multi-worker",
         "hostname":"worker",
         "essential":false,
         "memory":128
      },
      {
         "name":"nginx",
-        "image":"henokyen/multi-nginx",
+        "image":"henok2346/multi-nginx",
         "essential":true,
         "postMappings":[
             {
