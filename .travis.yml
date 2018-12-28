@@ -1,0 +1,20 @@
+sudo: required
+services:
+  - docker 
+before_install:
+  - docker build -t henokyen/react-test -f ./client/Dockerfile.dev ./client # look in to the client directory to get the build context
+  # but if you have another project part to test then: 
+  # - docker build myotherproject 
+  # then on the script section below you write
+  # - docker run myotherproject commnads to run the test
+
+# remember the script section is the primary test running section.
+script:
+  - docker run henokyen/react-test npm test -- --converage
+
+after_success: # build prodocution version for each of the project parts
+  - docker build -t henokyen/multi-clinet ./client # it will use the default deockerfile which is Dockerfile
+  - docker build -t henokyen/multi-nginx ./nginx
+  - docker build -t henokyen/multi-server ./server
+  - docker build -t henokyen/multi-worker ./worker 
+# take those images and push them to docker hub
