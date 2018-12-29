@@ -33,7 +33,7 @@ deploy:
   app: multi-docker # the name of your application on elatic beanstalk
   env: MultiDocker-env # the name of the environment on the elatic beanstalk
   bucket_name: elasticbeanstalk-us-west-2-319994344936
-  bucket_path: docker-multi
+  bucket_path: multi-docker
 
   on:
     barach: master
