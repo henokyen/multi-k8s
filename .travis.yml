@@ -29,9 +29,9 @@ after_success: # build prodocution version for each of the project parts
   
 deploy:
   provider: elasticbeanstalk # deply the application on aws ealstic beanstalk
-  region: "us-west-2" #is the  region where you originally created your elastic beanstalk instance.
-  app: "multi-docker" # the name of your application on elatic beanstalk
-  env: "MultiDocker-env" # the name of the environment on the elatic beanstalk
+  region: us-west-2 #is the  region where you originally created your elastic beanstalk instance.
+  app: multi-docker # the name of your application on elatic beanstalk
+  env: MultiDocker-env # the name of the environment on the elatic beanstalk
   bucket_name: elasticbeanstalk-us-west-2-319994344936
   bucket_path: docker-multi
 
