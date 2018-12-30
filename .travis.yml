@@ -14,7 +14,7 @@ script:
 
 after_success: # build prodocution version for each of the project parts
   
-  - docker build -t henok2346/multi-client ./client # it will use the default deockerfile which is Dockerfile
+  - docker build -t henok2346/multi-client ./client # it will use the default deockerfile which is Dockerfile located at ./client
   - docker build -t henok2346/multi-nginx  ./nginx
   - docker build -t henok2346/multi-server ./server
   - docker build -t henok2346/multi-worker ./worker 
